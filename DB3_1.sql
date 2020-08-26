@@ -1,3 +1,4 @@
+----
 select TEXT
 from ALL_SOURCE
 where OWNER = 'MDSYS' and  NAME = 'SDO_GEOMETRY';
@@ -90,7 +91,7 @@ create table DOBES_STAVOKLIS(
     constraint fk_dobes_ID foreign key (dobes_ID) references PUKU_DOBES(dobes_ID)
 );
 
---META-datu nor‚dÓana
+--META-datu nor√¢d√Æ√∞ana
 insert into USER_SDO_GEOM_METADATA(TABLE_NAME, COLUMN_NAME, DIMINFO, SRID)
     values(
         'ZOGI',
@@ -136,178 +137,178 @@ insert into USER_SDO_GEOM_METADATA(TABLE_NAME, COLUMN_NAME, DIMINFO, SRID)
 SELECT * FROM USER_SDO_GEOM_METADATA;
 
 --Datu ievade
---Sl‚Úa ˛ogi datu ievade
+--Sl√¢√≤a √æogi datu ievade
 insert into ZOGI values
     (1,
-    MDSYS.SDO_GEOMETRY(2002, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,2,1), -- lÓnija
+    MDSYS.SDO_GEOMETRY(2002, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,2,1), -- l√Ænija
     mdsys.SDO_ORDINATE_ARRAY(91,201, 4,201)),
-    'ZiemeÔu kreisais');
+    'Zieme√Øu kreisais');
     
 insert into ZOGI values
     (2,
-    MDSYS.SDO_GEOMETRY(2002, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,2,1), -- lÓnija
+    MDSYS.SDO_GEOMETRY(2002, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,2,1), -- l√Ænija
     mdsys.SDO_ORDINATE_ARRAY(4,201, 4,4)),
     'Rietumu');
 
 insert into ZOGI values
     (3,
-    MDSYS.SDO_GEOMETRY(2002, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,2,1), -- lÓnija
+    MDSYS.SDO_GEOMETRY(2002, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,2,1), -- l√Ænija
     mdsys.SDO_ORDINATE_ARRAY(4,4, 180,4)),
     'Dienvidu');        
 
 insert into ZOGI values
     (4,
-    MDSYS.SDO_GEOMETRY(2002, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,2,1), -- lÓnija
+    MDSYS.SDO_GEOMETRY(2002, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,2,1), -- l√Ænija
     mdsys.SDO_ORDINATE_ARRAY(180,4, 180,201)),
     'Austrumu');
     
 insert into ZOGI values
     (5,
-    MDSYS.SDO_GEOMETRY(2002, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,2,1), -- lÓnija
+    MDSYS.SDO_GEOMETRY(2002, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,2,1), -- l√Ænija
     mdsys.SDO_ORDINATE_ARRAY(180,201, 99,201)),
-    'ZiemeÔu labais');        
+    'Zieme√Øu labais');        
 
---IevadÓto Ïeometrisko datu valid‚cija sl‚nÓ ˛ogi        
+--Ievad√Æto √¨eometrisko datu valid√¢cija sl√¢n√Æ √æogi        
 select a.Zoga_ID, a.ZOGA_NOSAUKUMS, sdo_GEOM.VALIDATE_GEOMETRY(ZOGS, 1) from ZOGI a;
 
---Sl‚Úa ˚denstilpnes datu ievade
+--Sl√¢√≤a √ªdenstilpnes datu ievade
 insert into UDENSTILPNES values(1,
     MDSYS.SDO_GEOMETRY(2003, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,1), -- polinoms bez caurumiem
     mdsys.SDO_ORDINATE_ARRAY(16,41, 16,30, 24,30, 24,36, 31,36, 31,27, 15,27, 15,12, 24,12, 24,8, 30,8, 30,12, 37,12,
     37,16, 31,16, 31,19, 37,19, 37,24, 49,24, 49,8, 65,8, 65,31, 46,31, 46,41, 16,41)),
-    'Var˛u dÓÌis'); 
+    'Var√æu d√Æ√≠is'); 
     
---IevadÓto Ïeometrisko datu valid‚cija sl‚nÓ ˚denstilpnes     
+--Ievad√Æto √¨eometrisko datu valid√¢cija sl√¢n√Æ √ªdenstilpnes     
 select a.udens_ID, a.udens_NOSAUKUMS, sdo_GEOM.VALIDATE_GEOMETRY(udens, 1) from UDENSTILPNES a;
 
---Sl‚Úa CEœI datu ievade
+--Sl√¢√≤a CE√èI datu ievade
 insert into CELI values(1,
-    MDSYS.SDO_GEOMETRY(2003, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,3), -- taisnst˚ris
+    MDSYS.SDO_GEOMETRY(2003, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,3), -- taisnst√ªris
     mdsys.SDO_ORDINATE_ARRAY(91,53, 99,201)),
-    'Galvenais ceÔ');     
+    'Galvenais ce√Ø√∞');     
 insert into CELI values(2,
-    MDSYS.SDO_GEOMETRY(2003, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,3), -- taisnst˚ris
+    MDSYS.SDO_GEOMETRY(2003, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,3), -- taisnst√ªris
     mdsys.SDO_ORDINATE_ARRAY(94,42, 95,53)),
-    'Asfalta ceÔ');    
+    'Asfalta ce√Ø√∞');    
 insert into CELI values(3,
-    MDSYS.SDO_GEOMETRY(2003, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,3), -- taisnst˚ris
+    MDSYS.SDO_GEOMETRY(2003, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,3), -- taisnst√ªris
     mdsys.SDO_ORDINATE_ARRAY(99,70, 132,71)),
-    'Grants ceÔ');    
+    'Grants ce√Ø√∞');    
 insert into CELI values(4,
-    MDSYS.SDO_GEOMETRY(2003, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,3), -- taisnst˚ris
+    MDSYS.SDO_GEOMETRY(2003, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,3), -- taisnst√ªris
     mdsys.SDO_ORDINATE_ARRAY(99,167, 132,168)),
-    '–Ìembu ceÔ');    
+    '√ê√≠embu ce√Ø√∞');    
 insert into CELI values(5,
     MDSYS.SDO_GEOMETRY(2003, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,1), -- polinoms bez caurumiem
     mdsys.SDO_ORDINATE_ARRAY(99,54, 99,53, 118,53, 118,46, 136,46, 136,43, 137,43, 137,46, 169,46, 169,43, 170,43, 170,47,
     119,47, 119,54, 99,54)),
-    'BruÏÁtais ceÔ');  
+    'Bru√¨√ßtais ce√Ø√∞');  
 insert into CELI values(6,
     MDSYS.SDO_GEOMETRY(2003, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,1), -- polinoms bez caurumiem
     mdsys.SDO_ORDINATE_ARRAY(46,94, 46,85, 47,85, 47,93, 91,93, 91,94, 46,94)),
-    'Zemes ceÔ');    
+    'Zemes ce√Ø√∞');    
 insert into CELI values(7,
     MDSYS.SDO_GEOMETRY(2003, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,1), -- polinoms bez caurumiem
     mdsys.SDO_ORDINATE_ARRAY(41,141, 41,131, 42,131, 42,140, 91,140, 91,141, 41,141)),
-    'Skaidas ceÔ');
+    'Skaidas ce√Ø√∞');
 insert into CELI values(8,
     MDSYS.SDO_GEOMETRY(2003, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,1), -- polinoms bez caurumiem
     mdsys.SDO_ORDINATE_ARRAY(41,185, 41,179, 42,179, 42,184, 91,184, 91,185, 41,185)),
-    '»iekuru ceÔ');
+    '√àiekuru ce√Ø√∞');
 insert into CELI values(9,
     MDSYS.SDO_GEOMETRY(2003, NULL, NULL, MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,1), -- polinoms bez caurumiem
     mdsys.SDO_ORDINATE_ARRAY(99,134, 99,133, 143,133, 143,128, 144,128, 144,134, 99,134)),
-    'S˚nu ceÔ');
+    'S√ªnu ce√Ø√∞');
 
---IevadÓto Ïeometrisko datu valid‚cija sl‚nÓ ceÔi      
+--Ievad√Æto √¨eometrisko datu valid√¢cija sl√¢n√Æ ce√Øi      
 select a.cela_ID, a.cela_NOSAUKUMS, sdo_GEOM.VALIDATE_GEOMETRY(cels, 1) from CELI a;
 
---AtributÓvo datu ievade tabula ZOGA_STAVOKLIS
-INSERT INTO ZOGA_STAVOKLIS values(1,87,'œoti labs',1);
+--Atribut√Ævo datu ievade tabula ZOGA_STAVOKLIS
+INSERT INTO ZOGA_STAVOKLIS values(1,87,'√èoti labs',1);
 
 INSERT INTO ZOGA_STAVOKLIS values(2,197,'Labs',2);
 
-INSERT INTO ZOGA_STAVOKLIS values(3,176,'Apmierinos',3);
+INSERT INTO ZOGA_STAVOKLIS values(3,176,'Apmierino√∞s',3);
 
 INSERT INTO ZOGA_STAVOKLIS values(4,197,'Labs',4);
 
-INSERT INTO ZOGA_STAVOKLIS values(5,81,'œoti labs',5);
+INSERT INTO ZOGA_STAVOKLIS values(5,81,'√èoti labs',5);
 
---IevadÓto datu izg˚ana no tabulas ZOGA_STAVOKLIS
+--Ievad√Æto datu izg√ª√∞ana no tabulas ZOGA_STAVOKLIS
 Select * FROM ZOGA_STAVOKLIS;  
 
---AtributÓvo datu ievade tabula UDENSTILPNES_STAVOKLIS  
-INSERT INTO UDENSTILPNES_STAVOKLIS values(1,2100,'TÓrs',1);
+--Atribut√Ævo datu ievade tabula UDENSTILPNES_STAVOKLIS  
+INSERT INTO UDENSTILPNES_STAVOKLIS values(1,2100,'T√Ærs',1);
 
---IevadÓto datu izg˚ana no tabulas UDENSTILPNES_STAVOKLIS
+--Ievad√Æto datu izg√ª√∞ana no tabulas UDENSTILPNES_STAVOKLIS
 Select * FROM UDENSTILPNES_STAVOKLIS;  
 
---AtributÓvo datu ievade tabula CELA_STAVOKLIS  
+--Atribut√Ævo datu ievade tabula CELA_STAVOKLIS  
 INSERT INTO CELA_STAVOKLIS values(1,'2017-10-25','Labs',8);
-INSERT INTO CELA_STAVOKLIS values(2,'2016-05-15','Apmierinos',6);
+INSERT INTO CELA_STAVOKLIS values(2,'2016-05-15','Apmierino√∞s',6);
 INSERT INTO CELA_STAVOKLIS values(3,'2015-04-25','Labs',7);
 INSERT INTO CELA_STAVOKLIS values(4,'2018-05-25','Teicams',9);
 INSERT INTO CELA_STAVOKLIS values(5,'2010-06-10','Labs',1);
 INSERT INTO CELA_STAVOKLIS values(6,'2010-07-06','Labs',2);
-INSERT INTO CELA_STAVOKLIS values(7,'2012-09-13','œoti labs',3);
-INSERT INTO CELA_STAVOKLIS values(8,'2014-04-30','Apmierinos',4);
+INSERT INTO CELA_STAVOKLIS values(7,'2012-09-13','√èoti labs',3);
+INSERT INTO CELA_STAVOKLIS values(8,'2014-04-30','Apmierino√∞s',4);
 INSERT INTO CELA_STAVOKLIS values(9,'2010-08-01','Labs',5);
 
---IevadÓto datu izg˚ana no tabulas UDEENSTILPNES_STAVOKLIS
+--Ievad√Æto datu izg√ª√∞ana no tabulas UDEENSTILPNES_STAVOKLIS
 Select * FROM CELA_STAVOKLIS;  
 
---IevadÓto datu izg˚ana no tabulas MAJINAS
+--Ievad√Æto datu izg√ª√∞ana no tabulas MAJINAS
 SELECT * FROM MAJINAS;
 
---IevadÓto Ïeometrisko datu valid‚cija sl‚nÓ m‚jiÚas     
+--Ievad√Æto √¨eometrisko datu valid√¢cija sl√¢n√Æ m√¢ji√≤as     
 select a.majinas_ID, a.majinas_NOSAUKUMS, sdo_GEOM.VALIDATE_GEOMETRY(majina, 1) from MAJINAS a;
 
---IevadÓto datu izg˚ana no tabulas SPORTA_LAUKUMI
+--Ievad√Æto datu izg√ª√∞ana no tabulas SPORTA_LAUKUMI
 SELECT * FROM SPORTA_LAUKUMI;
 
---IevadÓto Ïeometrisko datu valid‚cija sl‚nÓ sporta laukumi    
+--Ievad√Æto √¨eometrisko datu valid√¢cija sl√¢n√Æ sporta laukumi    
 select a.laukuma_ID, a.laukuma_NOSAUKUMS, sdo_GEOM.VALIDATE_GEOMETRY(laukums, 1) from SPORTA_LAUKUMI a;
 
---IevadÓto datu izg˚ana no tabulas PUKU_DOBES
+--Ievad√Æto datu izg√ª√∞ana no tabulas PUKU_DOBES
 SELECT * FROM PUKU_DOBES;
 
---IevadÓto Ïeometrisko datu valid‚cija sl‚nÓ puÌu dobes  
+--Ievad√Æto √¨eometrisko datu valid√¢cija sl√¢n√Æ pu√≠u dobes  
 select a.dobes_ID, a.dobes_NOSAUKUMS, sdo_GEOM.VALIDATE_GEOMETRY(dobe, 1) from PUKU_DOBES a;
 
---IevadÓto datu izg˚ana no tabulas MAJINAS_STAVOKLIS
+--Ievad√Æto datu izg√ª√∞ana no tabulas MAJINAS_STAVOKLIS
 SELECT * FROM MAJINAS_STAVOKLIS;
 
---IevadÓto datu izg˚ana no tabulas LAUKUMA_STAVOKLIS
+--Ievad√Æto datu izg√ª√∞ana no tabulas LAUKUMA_STAVOKLIS
 SELECT * FROM LAUKUMA_STAVOKLIS;
 
---IevadÓto datu izg˚ana no tabulas DOBES_STAVOKLIS
+--Ievad√Æto datu izg√ª√∞ana no tabulas DOBES_STAVOKLIS
 SELECT * FROM DOBES_STAVOKLIS;
 
---FiksÁta indeksa izveidoana sl‚nim ˚denstilpnes
+--Fiks√ßta indeksa izveido√∞ana sl√¢nim √ªdenstilpnes
 create index IND_FIX_UDENSTILPNES on UDENSTILPNES(UDENS)
 indextype is mdsys.spatial_index
 parameters ('SDO_LEVEL = 4');
 
---FiksÁta indeksa izveidoana sl‚nim m‚jiÚas
+--Fiks√ßta indeksa izveido√∞ana sl√¢nim m√¢ji√≤as
 create index IND_FIX_MAJINAS on MAJINAS(MAJINA)
 indextype is mdsys.spatial_index
 parameters ('SDO_LEVEL = 4');
 
---HibrÓda indeksa izveidoana sl‚nim ˛ogi
+--Hibr√Æda indeksa izveido√∞ana sl√¢nim √æogi
 create index IND_HIB_ZOGI on ZOGI(ZOGS)
 indextype is mdsys.spatial_index
 parameters ('SDO_LEVEL = 4, SDO_NUMTILES = 4');
 
---HibrÓda indeksa izveidoana sl‚nim sporta laukumi
+--Hibr√Æda indeksa izveido√∞ana sl√¢nim sporta laukumi
 create index IND_HIB_SPORTA_LAUKUMI on SPORTA_LAUKUMI(LAUKUMS)
 indextype is mdsys.spatial_index
 parameters ('SDO_LEVEL = 4, SDO_NUMTILES = 4');
 
---R - koka indeksa izveidoana sl‚nim ceÔa
+--R - koka indeksa izveido√∞ana sl√¢nim ce√Øa
 create index IND_RK_CELI on CELI(CELS)
 indextype is mdsys.spatial_index;
 
---R - koka indeksa izveidoana sl‚nim puÌu dobes
+--R - koka indeksa izveido√∞ana sl√¢nim pu√≠u dobes
 create index IND_RK_PUKU_DOBES on PUKU_DOBES(DOBE)
 indextype is mdsys.spatial_index
 parameters ('sdo_indx_dims =2');
@@ -319,14 +320,14 @@ drop index IND_HIB_SPORTA_LAUKUMI;
 drop index IND_RK_CELI;
 drop index IND_RK_PUKU_DOBES;
 
---INDEKSU ‚trdarbÓbas p‚rbaude
---FiksÁtais indekss
+--INDEKSU √¢trdarb√Æbas p√¢rbaude
+--Fiks√ßtais indekss
 drop index IND_RK_CELI;
 create index IND_FIX_CELI on CELI(CELS)
 indextype is mdsys.spatial_index
 parameters ('SDO_LEVEL = 4');
 select cels from CELI;
---HibrÓd indekss
+--Hibr√Æd indekss
 drop index IND_FIX_CELI;
 create index IND_HIB_CELI on CELI(CELS)
 indextype is mdsys.spatial_index
@@ -338,8 +339,8 @@ create index IND_RK_CELI on CELI(CELS)
 indextype is mdsys.spatial_index;
 select cels from CELI;
 
---Prim‚r‚ filtra vaic‚jumi
---1. vaic‚jums
+--Prim√¢r√¢ filtra vaic√¢jumi
+--1. vaic√¢jums
 select count(a.dobes_ID) as "Dobju skaits"
 from PUKU_DOBES a
 where mdsys.sdo_filter(a.dobe,MDSYS.SDO_GEOMETRY(2003,NULL,NULL, 
@@ -347,7 +348,7 @@ where mdsys.sdo_filter(a.dobe,MDSYS.SDO_GEOMETRY(2003,NULL,NULL,
     mdsys.SDO_ORDINATE_ARRAY(77,47,107,202)),
     'querytype=window') = 'TRUE';
     
---2. vaic‚jums
+--2. vaic√¢jums
 select a.majinas_nosaukums as "Nosaukums"
 from MAJINAS a
 where mdsys.sdo_filter(a.majina,MDSYS.SDO_GEOMETRY(2003,NULL,NULL, 
@@ -381,8 +382,8 @@ indextype is mdsys.spatial_index;
 create index IND_PUKU_DOBES on PUKU_DOBES(DOBE)
 indextype is mdsys.spatial_index;
     
---TopoloÏiju analÓzes vaic‚jumi
---1. Vaic‚jums
+--Topolo√¨iju anal√Æzes vaic√¢jumi
+--1. Vaic√¢jums
 SELECT a.MAJINAS_NOSAUKUMS as Objekts
 FROM MAJINAS a, Celi c
 where sdo_relate(a.majina,c.cels,'mask=anyinteract querytype=window') = 'TRUE';
@@ -392,86 +393,86 @@ CREATE MATERIALIZED VIEW TOP1 AS
     FROM MAJINAS a, Celi c
     where sdo_relate(a.majina,c.cels,'mask=anyinteract querytype=window') = 'TRUE';
  
---2.Vaic‚jums    
+--2.Vaic√¢jums    
 select a.majinas_Nosaukums as objekts
 from MAJINAS a, UDENSTILPNES b
-where b.udens_Nosaukums = 'Var˛u dÓÌis' and not SDO_WITHIN_DISTANCE(A.Majina, b.Udens, 'Distance = 75') = 'TRUE';
+where b.udens_Nosaukums = 'Var√æu d√Æ√≠is' and not SDO_WITHIN_DISTANCE(A.Majina, b.Udens, 'Distance = 75') = 'TRUE';
 
 CREATE MATERIALIZED VIEW TOP2 AS 
     select a.majinas_Nosaukums as objekts, a.majina
     from MAJINAS a, UDENSTILPNES b
-    where b.udens_Nosaukums = 'Var˛u dÓÌis' and not SDO_WITHIN_DISTANCE(A.Majina, b.Udens, 'Distance = 75') = 'TRUE';
+    where b.udens_Nosaukums = 'Var√æu d√Æ√≠is' and not SDO_WITHIN_DISTANCE(A.Majina, b.Udens, 'Distance = 75') = 'TRUE';
 
---3. Vaic‚jums
+--3. Vaic√¢jums
 Select a.zoga_nosaukums as objekts
 from ZOGI a, Celi b
-where b.cela_Nosaukums = 'Galvenais ceÔ' and SDO_TOUCH(b.cels, a.zogs) = 'TRUE' ;
+where b.cela_Nosaukums = 'Galvenais ce√Ø√∞' and SDO_TOUCH(b.cels, a.zogs) = 'TRUE' ;
 
 CREATE MATERIALIZED VIEW TOP3 AS 
     Select a.zoga_nosaukums as objekts, a.zogs
     from ZOGI a, Celi b
-    where b.cela_Nosaukums = 'Galvenais ceÔ' and SDO_TOUCH(b.cels, a.zogs) = 'TRUE' ;
+    where b.cela_Nosaukums = 'Galvenais ce√Ø√∞' and SDO_TOUCH(b.cels, a.zogs) = 'TRUE' ;
 
---4. Vaic‚jums    
-select 'Futbola laukums' as Objekts, round(sdo_nn_distance(1)) Att‚lums
+--4. Vaic√¢jums    
+select 'Futbola laukums' as Objekts, round(sdo_nn_distance(1)) Att√¢lums
 from MAJINAS a, SPORTA_LAUKUMI b
 where a.majinas_ID = 3 and b.Laukuma_ID = 1 and
 sdo_nn(a.majina, b.laukums, 'sdo_num_res=10',1) = 'TRUE'
     union
-select 'Volejbola laukums' as Objekts, round(sdo_nn_distance(2)) Att‚lums
+select 'Volejbola laukums' as Objekts, round(sdo_nn_distance(2)) Att√¢lums
 from MAJINAS a, SPORTA_LAUKUMI b
 where a.majinas_ID = 3 and b.Laukuma_ID = 2 and
 sdo_nn(a.majina, b.laukums, 'sdo_num_res=10',2) = 'TRUE'
     union
-select 'Basketbola laukums' as Objekts, round(sdo_nn_distance(3)) Att‚lums
+select 'Basketbola laukums' as Objekts, round(sdo_nn_distance(3)) Att√¢lums
 from MAJINAS a, SPORTA_LAUKUMI b
 where a.majinas_ID = 3 and b.Laukuma_ID = 3 and
 sdo_nn(a.majina, b.laukums, 'sdo_num_res=10',3) = 'TRUE';
 
 
 CREATE MATERIALIZED VIEW TOP4_1 AS   
-    select 'Futbola laukums' as Objekts, round(sdo_nn_distance(1)) Att‚lums
+    select 'Futbola laukums' as Objekts, round(sdo_nn_distance(1)) Att√¢lums
     from MAJINAS a, SPORTA_LAUKUMI b
     where a.majinas_ID = 3 and b.Laukuma_ID = 1 and
     sdo_nn(a.majina, b.laukums, 'sdo_num_res=10',1) = 'TRUE'
         union
-    select 'Volejbola laukums' as Objekts, round(sdo_nn_distance(2)) Att‚lums
+    select 'Volejbola laukums' as Objekts, round(sdo_nn_distance(2)) Att√¢lums
     from MAJINAS a, SPORTA_LAUKUMI b
     where a.majinas_ID = 3 and b.Laukuma_ID = 2 and
     sdo_nn(a.majina, b.laukums, 'sdo_num_res=10',2) = 'TRUE'
         union
-    select 'Basketbola laukums' as Objekts, round(sdo_nn_distance(3)) Att‚lums
+    select 'Basketbola laukums' as Objekts, round(sdo_nn_distance(3)) Att√¢lums
     from MAJINAS a, SPORTA_LAUKUMI b
     where a.majinas_ID = 3 and b.Laukuma_ID = 3 and
     sdo_nn(a.majina, b.laukums, 'sdo_num_res=10',3) = 'TRUE';
  
 CREATE MATERIALIZED VIEW TOP4 AS  
-    Select a.objekts, a.att‚lums , b.laukums
+    Select a.objekts, a.att√¢lums , b.laukums
     from TOP4_1 a , SPORTA_LAUKUMI b
     where b.laukuma_nosaukums = a.objekts; 
 
---Ãeometriju skaitlisko raksturojumu izg˚anas vaic‚jums
---1. Vaic‚jums
-select a.dobes_nosaukums, round(sdo_geom.SDO_area(a.dobe, 1)) as PlatÓba
+--√åeometriju skaitlisko raksturojumu izg√ª√∞anas vaic√¢jums
+--1. Vaic√¢jums
+select a.dobes_nosaukums, round(sdo_geom.SDO_area(a.dobe, 1)) as Plat√Æba
 from PUKU_DOBES a;
 
---2. Vaic‚jums
-select 'Atp˚tas krÁsls' as Objetks, round(sdo_geom.sdo_length(a.udens,1)/3) as Skaits
+--2. Vaic√¢jums
+select 'Atp√ªtas kr√ßsls' as Objetks, round(sdo_geom.sdo_length(a.udens,1)/3) as Skaits
 from UDENSTILPNES a
-where a.UDENS_NOSAUKUMS = 'Var˛u dÓÌis';
+where a.UDENS_NOSAUKUMS = 'Var√æu d√Æ√≠is';
 
---3. Vaic‚jums
-select sum(sdo_geom.sdo_length(a.zogs,1)) as ﬁoga_garums
+--3. Vaic√¢jums
+select sum(sdo_geom.sdo_length(a.zogs,1)) as √ûoga_garums
 from Zogi a;
 
---4. Vaic‚jums
-select Round(sum(A.Majinu_laukums)/(190*210),2) AizÚemta_daÔa
+--4. Vaic√¢jums
+select Round(sum(A.Majinu_laukums)/(190*210),2) Aiz√≤emta_da√Øa
 From
     (select sdo_geom.sdo_area(b.Majina, c.diminfo) Majinu_laukums
     from majinas b, user_sdo_geom_metadata c) a;
 
---AtributÓvo datu izg˚anas vaic‚jumi
---1. Vaic‚jums
+--Atribut√Ævo datu izg√ª√∞anas vaic√¢jumi
+--1. Vaic√¢jums
 select a.Majinas_ID, b.Majinas_Nosaukums, a.Stavi, a.Gultas_vietas, a.platiba, b.majina
 from MAJINAS_STAVOKLIS a, MAJINAS b
 where a.majinas_id = b.majinas_ID and
@@ -489,21 +490,21 @@ create materialized view ATR1 as
         mdsys.SDO_ORDINATE_ARRAY(0,0,95,201)),
         'querytype=window') = 'TRUE';
 
---2. Vaic‚jums
+--2. Vaic√¢jums
 select a.dobes_nosaukums, c.puku_skaits
     from PUKU_DOBES a, UDENSTILPNES b, DOBES_STAVOKLIS c
     where c.puku_skaits > 30 and
     a.dobes_id = c.dobes_ID and
-    b.udens_Nosaukums = 'Var˛u dÓÌis' and SDO_WITHIN_DISTANCE(A.dobe, b.Udens, 'Distance = 75') = 'TRUE';
+    b.udens_Nosaukums = 'Var√æu d√Æ√≠is' and SDO_WITHIN_DISTANCE(A.dobe, b.Udens, 'Distance = 75') = 'TRUE';
 
 create materialized view ATR2 as
     select a.dobes_nosaukums, c.puku_skaits, a.dobe
         from PUKU_DOBES a, UDENSTILPNES b, DOBES_STAVOKLIS c
         where c.puku_skaits > 30 and
         a.dobes_id = c.dobes_ID and
-        b.udens_Nosaukums = 'Var˛u dÓÌis' and SDO_WITHIN_DISTANCE(A.dobe, b.Udens, 'Distance = 75') = 'TRUE';
+        b.udens_Nosaukums = 'Var√æu d√Æ√≠is' and SDO_WITHIN_DISTANCE(A.dobe, b.Udens, 'Distance = 75') = 'TRUE';
 
---3. Vaic‚jums
+--3. Vaic√¢jums
 Select DISTINCT a.cela_nosaukums, b.stavoklis
 from Celi a, Cela_Stavoklis b, SPORTA_LAUKUMI c
 where a.cela_ID = B.Cela_ID and SDO_TOUCH(a.cels, c.laukums) = 'TRUE' ;
@@ -518,21 +519,21 @@ CREATE MATERIALIZED VIEW ATR3 AS
     from ATR3_1 a , Celi b
     where b.cela_NOSAUKUMS = a.CELA_NOSAUKUMS; 
 
---Ãeometriju Ïeometrisko datu ieg˚anas vaic‚jumi
---1. Vaic‚jums
+--√åeometriju √¨eometrisko datu ieg√ª√∞anas vaic√¢jumi
+--1. Vaic√¢jums
 select a.laukuma_nosaukums, a.laukums.sdo_elem_info
 from SPORTA_LAUKUMI a;
 
---2. Vaic‚jums
+--2. Vaic√¢jums
 Select koord.ID as "Punkta NR", koord.X, koord.Y
 from UDENSTILPNES a,
     TABLE(SDO_UTIL.GETVERTICES(a.udens)) koord
-where a.udens_nosaukums = 'Var˛u dÓÌis';
+where a.udens_nosaukums = 'Var√æu d√Æ√≠is';
 
---3. Vaic‚jums
+--3. Vaic√¢jums
 Select a.dobes_nosaukums Objekts, a.dobe.get_dims() Dimensijas
 from PUKU_DOBES a;
 
---4. Vaic‚jums
-select a.majinas_nosaukums M‚jiÚa, a.majina.get_gtype() Tips
+--4. Vaic√¢jums
+select a.majinas_nosaukums M√¢ji√≤a, a.majina.get_gtype() Tips
 from majinas a;
