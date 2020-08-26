@@ -1,1 +1,2 @@
-# Grfiskas_datu_bazes_labaratorijas_darbs
+# Grafiskas_datu_bazes_labaratorijas_darbs
+# Izstrādāts pie porfesora J. Eiduka
