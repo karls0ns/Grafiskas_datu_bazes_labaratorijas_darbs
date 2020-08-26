@@ -1,0 +1,1 @@
+# Grfiskas_datu_bazes_labaratorijas_darbs
